@@ -1,0 +1,47 @@
+/*use element selector to select all p elements for this style*/
+p{
+    
+    color: greenyellow;
+    font-size: 32px;
+}
+
+/*Use class selector to define style for elements*/
+.mun_keksima{
+    
+    background-color: aquamarine;
+}
+
+.fancy{
+    
+    color: black;
+    border: 2px;
+    background-color: red;
+    border-radius: 8px;
+}
+
+/*Use id selector to define style*/
+#joku_tyyli{
+    
+    margin: 100px;
+}
+
+.login_container{
+    
+    width: 500px;
+    margin: 8px auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: darksalmon;
+    padding: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
