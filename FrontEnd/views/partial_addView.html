@@ -1,0 +1,9 @@
+<form class='loginForm'>
+    <h3>Add new friend info</h3>
+    <!--ng-model directive is the way to tarnsfer data to controller -->
+    <input id='name' required class="form-control" type="text" placeholder="name" ng-model="name"><br/>
+    <input required class="form-control" type="text" placeholder="address" ng-model='address'><br/>
+    <input required class="form-control" type="text" placeholder="age" ng-model='age'><br/>
+    <input id="save" class="btn btn-default" type="button" value="Save" ng-click='savePerson()'>
+</form>
+<div class="flash-style" flash-message="2000"></div> 

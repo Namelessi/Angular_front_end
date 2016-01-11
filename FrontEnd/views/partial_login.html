@@ -1,9 +1,12 @@
-<form>
-    <!--ng-model directive is the way to transfer data to controller -->
-    <input type="text" placeholder="username" ng-model="user"><br/>
-    <input type="password" placeholder="password" ng-model="pass"><br/>
-    <input type="button" value="Login" ng-click='loginClicked()'>
-    <input type="button" value="Register" ng-click='registerClicked()'>
+
+<form class='loginForm'>
+    <h3>Login to friends app</h3>
+    <!--ng-model directive is the way to tarnsfer data to controller -->
+    <input class="form-control" type="text" placeholder="username" ng-model="user"><br/>
+    <input class="form-control" type="password" placeholder="password" ng-model='pass'><br/>
+    <input class="btn btn-default" type="button" value="Login" ng-click='loginClicked()'>
+    <input class="btn btn-default" type="button" value="Register" ng-click='registerClicked()'>
     <!--bind the data from username textfield (use the variable 'user')-->
     <p>{{user}}</p>
 </form>
+<div class="flash-style" flash-message="2000"></div> 

@@ -1,6 +1,12 @@
 var mongoose = require("mongoose");
+var db_name = "oma";
+var mongodb_connection_string = 'mongodb://127.0.0.1:27017/' + db_name;
 
-mongoose.connect('mongodb://localhost:27017/oma',connectionStatus);
+if(process.env.OPENSHIFT_MONGODB_DB_URL){
+  mongodb_connection_string = process.env.OPENSHIFT_MONGODB_DB_URL + db_name;
+}
+
+mongoose.connect(mongodb_connection_string,connectionStatus);
 
 /**
   *Connectuion callback for fail and ok cases
@@ -31,8 +37,3 @@ var Person = mongoose.model('Person',{
 //Using exports object you expose the data to other modules
 exports.Person = Person;
 exports.Friends = User;
-
-exports.myFunction = function(){
-    
-    console.log("This ");
-}

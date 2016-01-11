@@ -1,39 +1,40 @@
-/*use element selector to select all p elements for this style*/
-p{
+html,body{
     
-    color: greenyellow;
-    font-size: 32px;
+    max-width: 100%;
+    width: 100%;
 }
 
-/*Use class selector to define style for elements*/
-.mun_keksima{
+.loginForm{
     
-    background-color: aquamarine;
-}
-
-.fancy{
-    
-    color: black;
-    border: 2px;
-    background-color: red;
-    border-radius: 8px;
-}
-
-/*Use id selector to define style*/
-#joku_tyyli{
-    
-    margin: 100px;
-}
-
-.login_container{
-    
-    width: 500px;
-    margin: 8px auto;
-    border: 2px solid black;
+    width: 400px;
+    margin: 30px auto;
+    border: 2px solid gray;
     border-radius: 5px;
-    background-color: darksalmon;
-    padding: 8px;
+    padding: 20px;
+    background-color: lightblue;
 }
+
+.table_container
+{
+    
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+    padding: 12px;
+}
+
+.flash-style{
+    
+    width: 30%;
+    margin: auto 0;
+    position: absolute;
+    top: 10%;
+    left: 450px;
+    
+}
+
+
 
 
 

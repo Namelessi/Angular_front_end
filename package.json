@@ -1,0 +1,26 @@
+{
+  "name": "html5view",
+  "version": "0.0.1",
+  "description": "RESTful server for person app",
+  "scripts": {
+        "start": "node ./BackEnd/server.js"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maukka76/HTML5View.git"
+  },
+  "author": "Markus Veijola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maukka76/HTML5View/issues"
+  },
+  "homepage": "https://github.com/maukka76/HTML5View#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "mongoose": "^4.2.3",
+    "uuid": "^2.0.1"
+  }
+}
