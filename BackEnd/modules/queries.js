@@ -70,7 +70,7 @@ exports.deletePerson = function(req,res){
             db.Friends.update({username:req.session.kayttaja},{$pull:{'friends':{$in:toDelete}}},function(err,data){
                 if(err){
                     console.log(err);
-                    res.status(500).send({messsage:err.message});
+                    res.status(500).send({message:err.message});
                 }else{
                     
                     res.status(200).send({message:'Delete success'});

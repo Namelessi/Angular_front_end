@@ -101,6 +101,7 @@ app.use('/persons',person);
 //This router checks if client is logged in or not
 app.get('/isLogged',function(req,res){
     //User is logged in if session contains kayttaja attribute
+    console.log("logged info:" + req.session.kayttaja);
     if(req.session.kayttaja){
         res.status(200).send([{status:'Ok'}]);   
     }
