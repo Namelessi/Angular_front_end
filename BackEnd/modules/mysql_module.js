@@ -43,8 +43,9 @@ exports.loginMysqlProc = function(req,res){
            res.send(502,{status:error.message});
        }else{
            
+           var test = results[0];
            if(results.length > 0){
-               req.session.kayttaja = results.username;
+               req.session.kayttaja = test[0].username;
                //Create the token
                var token = jwt.sign(results,server.secret,{expiresIn:'2h'});
                res.send(200,{status:"Ok",secret:token});
@@ -55,3 +56,57 @@ exports.loginMysqlProc = function(req,res){
        } 
     });
 }
+
+exports.getFriendsForUserByUsername = function(req,res){
+    
+    connection.query('CALL getUserFriendsByName(?)',
+[req.session.kayttaja],function(error,results,fields){
+        
+        if(results.length > 0){
+            var data = results[0];
+        
+            res.send(data);
+        }else{
+        
+            res.redirect('./');
+        }
+    });
+}
+
+exports.registerUser = function(req,res){
+    
+    connection.query('CALL registerUser(?,?)',
+                    [req.body.username,req.body.password],
+                    function(error,results,fields){
+        
+        
+        if(error){
+            
+            res.status(500).send({status:"Username allready in use"});
+        }
+        else{
+            res.status(200).send({status:"Ok"});
+        }
+    });
+}
+
+exports.addNewFriend  = function(req,res){
+    
+    connection.query('CALL addNewFriend(?,?,?,?)',
+                    [req.body.name,req.body.address,req.body.age,req.session.userid],
+                    function(error,results,fields){
+        
+        if(error){
+                
+                res.status(500).json({message:'Fail'});
+            }else{
+                
+                res.status(200).json({data:newData});
+            }
+    });
+}
+
+
+
+
+
