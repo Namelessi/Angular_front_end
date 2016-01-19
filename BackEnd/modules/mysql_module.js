@@ -144,8 +144,8 @@ exports.deleteFriends = function(req,res){
     connection.query(query,[],function(error,results,fields){
         
         if(error){
-            console.log(err);
-            res.status(500).send({message:err.message});
+     
+            res.status(500).send({message:error});
         }else{
             res.status(200).send({message:'Delete success'});
         }

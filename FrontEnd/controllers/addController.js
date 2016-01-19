@@ -1,5 +1,10 @@
 main_module.controller('addController',function($scope,friendDataFactory,Flash){
     
+	$scope.navbarData = {
+		
+		urls:['/logout','#/delete','#/insert','http://www.kaleva.fi'],
+		texts:['Logout','Delete','Insert','News']
+	}
     $scope.name = "";
     $scope.address = "";
     $scope.age = 0;

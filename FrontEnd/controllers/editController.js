@@ -2,7 +2,11 @@ main_module.controller('editController',function($scope,friendDataFactory,$locat
     
     console.log('inside edit controller');
     var selectedFriend = friendDataFactory.getSelectedFriend();
-    
+    $scope.navbarData = {
+		
+		urls:['/logout','#/delete','#/insert'],
+		texts:['Logout','Delete','Insert']
+	}
     $scope.id = selectedFriend._id;
     $scope.name = selectedFriend.name;
     $scope.address = selectedFriend.address;
